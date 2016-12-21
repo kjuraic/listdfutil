@@ -1,0 +1,5 @@
+exportPattern("^[^\\.]")
+importFrom("tcltk", "tk_choose.files")
+importFrom("plyr", "alply")
+importFrom("utils", "read.table")
+importFrom("manipulate", "manipulate")
