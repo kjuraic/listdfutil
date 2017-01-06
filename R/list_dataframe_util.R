@@ -60,7 +60,7 @@ read_tables <- function(fnms = tk_choose.files(), ...){
 #'              As plot main title it's used data.frame name.
 #' @param lst list of data.frames for preview
 #' @param col_x x values for plot
-#' @parma col_y y values for plot
+#' @param col_y y values for plot
 #' @param ... additional parameters transfered to plot function
 #' @return None
 #' @examples
@@ -69,20 +69,21 @@ read_tables <- function(fnms = tk_choose.files(), ...){
 #'             plot_tables(dat, col = 2)
 #'    }
 plot_tables <- function(lst, col_x = 1, col_y = 2, ...){
+  id <- 1
   manipulate({
     plot(lst[[id]][,col_x], lst[[id]][,col_y],
          main = names(lst)[id],
          type = 'o', pch = 16, cex = .5, ...
     )
   },
-  id = slider(min = 1, max = length(dat_lst), initial = 1, label = "Sample_ID")
+  id = slider(min = 1, max = length(lst), initial = 1, label = "Sample_ID")
   )
 }
 
-plot_tables_all <- function(lst, col_x = 1, col_y = 2, ...){
-  df <- lst2df(lst)
-  x_range <- c(min(df[,col_x], na.rm = TRUE), min(df[,col_x], na.rm = TRUE))
-  y_range <- c(min(df[,col_y], na.rm = TRUE), min(df[,col_y], na.rm = TRUE))
-  p <- ggplot(df, aes(x = names(df)[col_x], y = names(df)[col_y], color = "names"))
-  p + geom_line() + theme_bw()
-}
+# plot_tables_all <- function(lst, col_x = 1, col_y = 2, ...){
+#   df <- lst2df(lst)
+#   x_range <- c(min(df[,col_x], na.rm = TRUE), min(df[,col_x], na.rm = TRUE))
+#   y_range <- c(min(df[,col_y], na.rm = TRUE), min(df[,col_y], na.rm = TRUE))
+#   p <- ggplot(df, aes(x = names(df)[col_x], y = names(df)[col_y], color = "names"))
+#   p + geom_line() + theme_bw()
+# }

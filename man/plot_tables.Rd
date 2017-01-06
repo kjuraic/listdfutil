@@ -4,10 +4,14 @@
 \alias{plot_tables}
 \title{preview plot of single data.frame in list}
 \usage{
-plot_tables(lst, ...)
+plot_tables(lst, col_x = 1, col_y = 2, ...)
 }
 \arguments{
 \item{lst}{list of data.frames for preview}
+
+\item{col_x}{x values for plot}
+
+\item{col_y}{y values for plot}
 
 \item{...}{additional parameters transfered to plot function}
 }
@@ -23,8 +27,10 @@ Use manipulate to preview plot data from list of data.frames.
              As plot main title it's used data.frame name.
 }
 \examples{
-   \dontrun{dat <- read_tables()
-            plot_tables(dat, col = 2)}
+   \dontrun{
+            dat <- read_tables()
+            plot_tables(dat, col = 2)
+   }
 }
 \author{
 K. Juraic
