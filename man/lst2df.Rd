@@ -31,4 +31,3 @@ conversion of list of data.frames to single data frame.
 \author{
 Krunoslav Juraic
 }
-

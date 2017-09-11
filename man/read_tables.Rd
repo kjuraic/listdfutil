@@ -31,4 +31,3 @@ Function is based on read.table function. If the list of file.name
 \author{
 K. Juraic
 }
-

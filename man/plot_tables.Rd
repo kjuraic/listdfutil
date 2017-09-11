@@ -35,4 +35,3 @@ Use manipulate to preview plot data from list of data.frames.
 \author{
 K. Juraic
 }
-
